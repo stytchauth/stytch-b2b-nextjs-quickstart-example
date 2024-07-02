@@ -21,9 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <body>
           <div className="page-container">
             <SideNav />
-            <main className="content-container">
-              <div>{children}</div>
-            </main>
+            <main className="content-container">{children}</main>
           </div>
         </body>
       </html>

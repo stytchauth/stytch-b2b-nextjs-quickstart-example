@@ -21,8 +21,8 @@ Follow the steps below to get this application fully functional and running usin
 In your terminal clone the project and install dependencies:
 
 ```bash
-git clone https://github.com/cal-stytch/stytch-b2b-nextjs-magic-links.git
-cd stytch-b2b-nextjs-magic-links
+git clone https://github.com/stytchauth/stytch-b2b-nextjs-magic-links-example.git
+cd stytch-b2b-nextjs-magic-links-example
 # Install dependencies using npm.
 npm i
 ```
@@ -37,6 +37,7 @@ Open `.env.local` in the text editor of your choice, and set the environment var
 
 ```
 # This is what a completed .env.local file will look like
+STYTCH_PROJECT_ENV=test
 STYTCH_PROJECT_ID=project-test-00000000-0000-1234-abcd-abcdef1234
 STYTCH_SECRET=secret-test-12345678901234567890abcdabcd
 NEXT_PUBLIC_STYTCH_PUBLIC_TOKEN=public-token-test-abcd123-0000-0000-abcd-1234567abc
