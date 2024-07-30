@@ -59,4 +59,4 @@ This example app showcases a small portion of what you can accomplish with Stytc
 
 # :question: Need support?
 
-Come join our [Slack community](https://stytch.slack.com/join/shared_invite/zt-2f0fi1ruu-ub~HGouWRmPARM1MTwPESA) to speak directly with a Stytch auth expert!
+Come join our [Slack community](https://stytch.com/docs/resources/support/overview) to speak directly with a Stytch auth expert!
