@@ -47,8 +47,10 @@ const SideNav = () => {
     <nav className="sidebar">
       <div className="sidebar-top-links">
         <Link href="/dashboard">Dashboard</Link>
-        <Link href="/settings">Organization Settings</Link>
-        <Link href="/profile">Profile</Link>
+        <Link href="/members">Members</Link>
+        <Link href="/settings">Settings</Link>
+        <Link href="/sso">SSO</Link>
+        <Link href="/scim">SCIM</Link>
       </div>
       <div className="logout-link" onClick={handleLogOut}>
         Log out

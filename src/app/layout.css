@@ -2,21 +2,26 @@
   display: flex;
   flex-direction: row;
   height: 100%;
+  font-family: 'Courier New';
 }
 
 .content-container {
   width: 100%;
   padding: 24px;
+  overflow: scroll;
+  font-family: 'Courier New';
 }
 
 .sidebar {
   width: 200px;
+  height: 100vh;
   background-color: #f3f5f6;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
   justify-content: space-between;
+  overflow-y: auto;
+  font-family: 'Courier New';
 }
 
 .sidebar a {
@@ -39,4 +44,11 @@
   padding: 10px 0;
   color: #19303d;
   align-self: left;
+  position: absolute;
+  bottom: 20px;
+  font-family: 'Courier New';
+}
+
+.logout-link:hover {
+  font-weight: bold;
 }
