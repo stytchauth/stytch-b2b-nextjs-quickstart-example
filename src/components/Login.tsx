@@ -14,14 +14,9 @@ import './Login.css';
 const Login = () => {
   const styles = {
     container: {
-      width: '100%',
+      width: '600px',
     },
-    buttons: {
-      primary: {
-        backgroundColor: '#4A37BE',
-        borderColor: '#4A37BE',
-      },
-    },
+    fontFamily: "Baskerville",
   };
 
   const discoveryConfig = {
