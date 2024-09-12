@@ -2,7 +2,7 @@
 
 ## Overview
 
-This example application demonstrates how one may use Stytch B2B within a Next.js 13 application using [App Router](https://nextjs.org/docs/app/building-your-application/routing#the-app-router).
+This example application demonstrates using Stytch B2B's pre-built UI components for both Login and Admin Portal (Member Management, Organization Settings, SSO and SCIM Configuration) within a Next.js 13 [App Router](https://nextjs.org/docs/app/building-your-application/routing#the-app-router) application.
 
 ## Set up
 
@@ -52,6 +52,14 @@ npm run dev
 ```
 
 The application will be available at [`http://localhost:3000`](http://localhost:3000).
+
+# Flows to explore
+- [ ] Authenticate and create a new Organization
+- [ ] Invite an alias of your email to the Organization in the "Members" tab
+- [ ] Enable Just-in-Time (JIT) Provisioning for your work email domain in the "Settings" tab, and set an Automatic Role Assignment to have all users from that domain automatically be assigned the Admin Role
+- [ ] In the [Roles & Permissions](https://stytch.com/dashboard/rbac) tab of the Stytch Dashboard, create a new `limited_admin` Role with the `update.info.name` and `update.info.slug` permissions for the `stytch.organization` Resource and log in as a Member with that Role. See how the Settings UI adjusts to account for their more limited permissions
+- [ ] Set up Enterprise SSO in the "SSO" tab (if you don't have admin access to a workforce IdP, you can create an [Okta Workforce Identity Cloud Developer Account](https://developer.okta.com/signup/) to test)
+- [ ] Configure SCIM provisioning in the "SCIM" tab and provision users individually or by groups. Create an automatic role assignment for a specific IdP group in the "Settings" tab
 
 # Next Steps
 
