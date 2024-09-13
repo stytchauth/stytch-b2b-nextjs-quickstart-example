@@ -1,13 +1,11 @@
 import { AdminPortalSSO } from '@stytch/nextjs/b2b/adminPortal'
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { config, styles } from '@/lib/adminPortalConfig';
 
 const SSO = () => {
-  const styles = {
-    fontFamily: "Courier New",
-  };
 
   return (
-      <AdminPortalSSO styles={styles} />
+    <AdminPortalSSO config={config} styles={styles} />
   );
 };
 
