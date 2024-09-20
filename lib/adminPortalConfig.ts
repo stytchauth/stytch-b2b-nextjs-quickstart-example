@@ -8,7 +8,8 @@ type Role = {
 export const config = {
   allowedAuthMethods: [
     AdminPortalB2BProducts.emailMagicLinks,
-    AdminPortalB2BProducts.sso,AdminPortalB2BProducts.oauthGoogle
+    AdminPortalB2BProducts.sso,
+    AdminPortalB2BProducts.oauthGoogle
   ],
   getRoleDescription: (role: Role) => {
     if (role.role_id == 'stytch_admin') {
