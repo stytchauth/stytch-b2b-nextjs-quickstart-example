@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { StytchB2B } from '@stytch/nextjs/b2b';
-import { B2BProducts, AuthFlowType } from '@stytch/vanilla-js/b2b';
+import { B2BProducts, AuthFlowType, OAuthProviders, B2BOAuthProviders } from '@stytch/vanilla-js/b2b';
 import './Login.css';
 
 /*
@@ -21,10 +21,13 @@ const Login = () => {
 
   const discoveryConfig = {
     authFlowType: AuthFlowType.Discovery,
-    products: [B2BProducts.emailMagicLinks],
+    products: [B2BProducts.emailMagicLinks, B2BProducts.oauth],
     sessionOptions: {
       sessionDurationMinutes: 60,
     },
+    oauthOptions: {
+      providers: [{type: B2BOAuthProviders.Google}]
+    }
   };
 
   return (
