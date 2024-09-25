@@ -21,8 +21,8 @@ Follow the steps below to get this application fully functional and running usin
 In your terminal clone the project and install dependencies:
 
 ```bash
-git clone https://github.com/stytchauth/stytch-b2b-nextjs-magic-links-example.git
-cd stytch-b2b-nextjs-magic-links-example
+git clone https://github.com/stytchauth/stytch-b2b-nextjs-quickstart-example.git
+cd stytch-b2b-nextjs-quickstart-example
 # Install dependencies using npm.
 npm i
 ```

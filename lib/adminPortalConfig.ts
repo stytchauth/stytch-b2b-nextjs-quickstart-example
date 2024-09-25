@@ -6,7 +6,11 @@ type Role = {
 }
 
 export const config = {
-  allowedAuthMethods: [AdminPortalB2BProducts.emailMagicLinks, AdminPortalB2BProducts.sso],
+  allowedAuthMethods: [
+    AdminPortalB2BProducts.emailMagicLinks,
+    AdminPortalB2BProducts.sso,
+    AdminPortalB2BProducts.oauthGoogle
+  ],
   getRoleDescription: (role: Role) => {
     if (role.role_id == 'stytch_admin') {
       return 'Able to manage settings and members'
