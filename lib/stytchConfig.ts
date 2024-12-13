@@ -1,8 +1,8 @@
-import { IBM_Plex_Mono } from '@next/font/google';
+import { IBM_Plex_Sans } from '@next/font/google';
 import { AdminPortalB2BProducts } from '@stytch/nextjs/b2b/adminPortal'
 import { B2BProducts, AuthFlowType, B2BOAuthProviders } from '@stytch/vanilla-js/b2b';
 
-const customFont = IBM_Plex_Mono({
+const customFont = IBM_Plex_Sans({
   subsets: ['latin'],
   weight: '400',
   style: 'normal',
@@ -51,12 +51,12 @@ export const discoveryConfig = {
 };
 
 export const adminPortalStyles = {
-  fontFamily: customFont.className,
+  fontFamily: customFont.style.fontFamily,
 }
 
 export const discoveryStyles = {
   container: {
     width: '500px',
   },
-  fontFamily: customFont.className,
+  fontFamily: customFont.style.fontFamily,
 };
