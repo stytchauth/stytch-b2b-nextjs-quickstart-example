@@ -1,11 +1,19 @@
+import { IBM_Plex_Mono } from '@next/font/google';
 import { AdminPortalB2BProducts } from '@stytch/nextjs/b2b/adminPortal'
+import { B2BProducts, AuthFlowType, B2BOAuthProviders } from '@stytch/vanilla-js/b2b';
+
+const customFont = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: '400',
+  style: 'normal',
+});
 
 type Role = {
   role_id: string;
   description: string;
 }
 
-export const config = {
+export const adminPortalConfig = {
   allowedAuthMethods: [
     AdminPortalB2BProducts.emailMagicLinks,
     AdminPortalB2BProducts.sso,
@@ -31,6 +39,24 @@ export const config = {
   }
 }
 
-export const styles = {
-  fontFamily: 'Courier New',
+export const discoveryConfig = {
+  authFlowType: AuthFlowType.Discovery,
+  products: [B2BProducts.oauth, B2BProducts.emailMagicLinks],
+  sessionOptions: {
+    sessionDurationMinutes: 60,
+  },
+  oauthOptions: {
+    providers: [{type: B2BOAuthProviders.Google}]
+  }
+};
+
+export const adminPortalStyles = {
+  fontFamily: customFont.className,
 }
+
+export const discoveryStyles = {
+  container: {
+    width: '500px',
+  },
+  fontFamily: customFont.className,
+};
