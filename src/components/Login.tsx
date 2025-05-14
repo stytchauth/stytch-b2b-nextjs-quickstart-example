@@ -1,7 +1,9 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { StytchB2B } from '@stytch/nextjs/b2b';
+import { StytchEventType } from '@stytch/vanilla-js';
 import { discoveryConfig, discoveryStyles } from '@/lib/stytchConfig';
 import './Login.css';
 
@@ -14,9 +16,21 @@ import './Login.css';
 
 const Login = () => {
 
+  const router = useRouter();
+
   return (
     <div className="centered-login">
-      <StytchB2B config={discoveryConfig} styles={discoveryStyles} />
+      <StytchB2B
+      config={discoveryConfig}
+      styles={discoveryStyles}
+      callbacks={{
+        onEvent: (event) => {
+          if (event.type === StytchEventType.AuthenticateFlowComplete) {
+            router.replace('/dashboard');
+          }
+        },
+      }}
+      />
     </div>
   );
 };

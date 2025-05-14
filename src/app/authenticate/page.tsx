@@ -1,20 +1,26 @@
 'use client';
 
 import Login from '@/src/components/Login';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { useStytchMember } from '@stytch/nextjs/b2b';
+import { useStytchMemberSession } from '@stytch/nextjs/b2b';
 
 export default function AuthenticatePage() {
-  const { member, isInitialized } = useStytchMember();
+  const { session, isInitialized } = useStytchMemberSession();
   const router = useRouter();
 
-  // If the Stytch SDK no longer has a User then redirect to login; for example after logging out.
+  const alreadyLoggedInRef = useRef<boolean>();
+  const hasSession = !!session;
   useEffect(() => {
-    if (isInitialized && member) {
-      router.replace('/dashboard');
+    if (isInitialized && alreadyLoggedInRef.current === undefined) {
+      alreadyLoggedInRef.current = hasSession;
+
+      if (hasSession) {
+        // The user was already logged in, so we can redirect them immediately
+        router.replace('/dashboard');
+      }
     }
-  }, [member, isInitialized, router]);
+  }, [isInitialized, hasSession, router]);
 
   return <Login />;
 }
