@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useStytchMemberSession } from '@stytch/nextjs/b2b';
 import Login from '@/src/components/Login';
@@ -8,12 +8,19 @@ import Login from '@/src/components/Login';
 export default function Index() {
   const { session, isInitialized } = useStytchMemberSession();
   const router = useRouter();
-  // If the Stytch SDK detects a User then redirect to profile; for example if a logged in User navigated directly to this URL.
+
+  const alreadyLoggedInRef = useRef<boolean>();
+  const hasSession = !!session;
   useEffect(() => {
-    if (isInitialized && session) {
-      router.replace('/dashboard');
+    if (isInitialized && alreadyLoggedInRef.current === undefined) {
+      alreadyLoggedInRef.current = hasSession;
+
+      if (hasSession) {
+        // The user was already logged in, so we can redirect them immediately
+        router.replace('/dashboard');
+      }
     }
-  }, [session, isInitialized, router]);
+  }, [isInitialized, hasSession, router]);
 
   return <Login />;
 }
